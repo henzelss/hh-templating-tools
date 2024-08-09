@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="header">
+        <h1>Ticket Name Generator</h1>
+        <button id="modeToggle">Switch to Dark Mode</button>
+    </div>
+
+    <div class="container">
+        <form id="ticketForm">
+            <div class="form-group">
+                <label for="channel">Channel:</label>
+                <select id="channel" onchange="populateCategories()">
+                    <option value="">Select Channel</option>
+                    <option value="Inbound Call">Inbound Call</option>
+                    <option value="Chat">Chat</option>
+                    <option value="Email">Email</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Name:</label>
+                <input type="text" id="username" placeholder="Enter Username">
+            </div>
+
+            <div class="form-group">
+                <label for="caseStatus">Case Status:</label>
+                <select id="caseStatus">
+                    <option value="Resolved">Resolved</option>
+                    <option value="Closed (no resolution)">Closed (no resolution)</option>
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Escalated">Escalated</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="account">Account:</label>
+                <select id="account">
+                    <option value="">Select Account</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="category1">Category 1:</label>
+                <select id="category1" onchange="updateSubCategories()">
+                    <option value="">Select Category 1</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="category2">Category 2:</label>
+                <div id="category2-container">
+                    <select id="category2">
+                        <option value="">Select Category 2</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="button" onclick="generateTitle()">Generate Title</button>
+        </form>
+        
+        <div class="generated-title">
+            <h2>Generated Ticket Title:</h2>
+            <p id="generatedTitle"></p>
+            <button id="copyButton" onclick="copyTitle()">Copy</button>
+        </div>
+    </div>
+
+    <footer>
+        Ticket Name Generator 2.0 - Created by HenzelGPT 2024 | <strong>Disclaimer:</strong> This site does not gather or store any personal data.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

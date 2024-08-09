@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Templating Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Email Templating Tool</h1>
+        
+        <label for="supervisor">Name of Supervisor:</label>
+        <input type="text" id="supervisor" placeholder="Enter supervisor's name">
+
+        <label for="user">Name of Caller:</label>
+        <input type="text" id="user" placeholder="Enter user's name">
+
+        <label for="account">Account:</label>
+        <select id="accountDropdown">
+            <option value="" disabled selected>Select an account</option>
+        </select>
+
+        <label for="issue">Issue:</label>
+        <input type="text" id="issue" placeholder="Describe the issue">
+
+        <label for="stepsTaken">Steps Taken:</label>
+        <textarea id="stepsTaken" placeholder="Describe the steps taken" rows="4"></textarea>
+
+        <label for="nextSteps">Next Steps:</label>
+        <select id="nextStepsDropdown">
+            <option value="Resolved">Resolved</option>
+            <option value="Closed">Closed</option>
+            <option value="Ongoing">Ongoing</option>
+            <option value="Escalated">Escalated</option>
+        </select>
+
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" placeholder="Enter duration (e.g., 11 mins)">
+
+        <label for="side">Side:</label>
+        <select id="sideDropdown">
+            <option value="Harte-Hanks side">Harte-Hanks side</option>
+            <option value="Agent side">Agent side</option>
+            <option value="Agent side">Unknown</option>
+        </select>
+
+        <label for="rootCause">Root Cause:</label>
+        <input type="text" id="rootCause" placeholder="Enter root cause">
+
+        <label for="connection">Type of Connection:</label>
+        <select id="connectionDropdown">
+            <option value="N/A">N/A</option>
+            <option value="Wired">Wired</option>
+            <option value="Wireless">Wireless</option>
+        </select>
+
+        <label for="modemName">Modem Name (brand):</label>
+        <input type="text" id="modemNameTextbox" placeholder="N/A" value="N/A">
+
+        <label for="os">OS:</label>
+        <select id="osDropdown">
+            <option value="N/A">N/A</option>
+            <option value="Windows 10">Windows 10</option>
+            <option value="Windows 11">Windows 11</option>
+            <option value="Mac">Mac</option>
+        </select>
+
+        <label for="version">Version:</label>
+        <input type="text" id="versionTextbox" placeholder="N/A" value="N/A">
+
+        <label for="processor">Processor:</label>
+        <input type="text" id="processorTextbox" placeholder="N/A" value="N/A">
+
+        <label for="ram">RAM:</label>
+        <select id="ramDropdown">
+            <option value="N/A">N/A</option>
+            <option value="4GB">4GB</option>
+            <option value="6GB">6GB</option>
+            <option value="8GB">8GB</option>
+            <option value="10GB">10GB</option>
+            <option value="12GB">12GB</option>
+            <option value="16GB">16GB</option>
+            <option value="32GB">32GB</option>
+        </select>
+
+        <label for="setup">Set up:</label>
+        <select id="setupDropdown">
+            <option value="N/A">N/A</option>
+            <option value="WFH">WFH</option>
+            <option value="Onsite">Onsite</option>
+        </select>
+
+        <label for="isp">ISP:</label>
+        <select id="ispDropdown">
+            <option value="N/A">N/A</option>
+            <option value="PLDT">PLDT</option>
+            <option value="Globe">Globe</option>
+            <option value="Converge">Converge</option>
+            <option value="Sky">Sky</option>
+            <option value="Dito">Dito</option>
+        </select>
+
+        <label for="speed">Speed test results:</label>
+        <input type="text" id="speedTextbox" placeholder="N/A" value="N/A">
+
+        <label for="headsetType">Headset Type:</label>
+        <select id="headsetTypeDropdown">
+            <option value="N/A">N/A</option>
+            <option value="Wired">Wired</option>
+            <option value="Wireless">Wireless</option>
+        </select>
+
+        <label for="headsetName">Headset Name (brand):</label>
+        <input type="text" id="headsetNameTextbox" placeholder="N/A" value="N/A">
+
+        <label for="ticket">JSM Ticket:</label>
+        <input type="text" id="ticket" placeholder="Enter JSM Ticket">
+
+        <button onclick="generateTemplate()">Generate</button>
+        <button id="copyButton" onclick="copyToClipboard()">Copy</button>
+
+        <h2>Generated Template:</h2>
+        <pre id="generatedTemplate"></pre>
+        
+        <footer>
+            <p>Jira Ticket Title Generator - created by HenzelGPT 2024</p>
+        </footer>
+
+        <button id="darkModeToggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
